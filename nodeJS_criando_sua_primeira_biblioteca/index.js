@@ -1,4 +1,3 @@
-const { match } = require('assert');
 const chalk = require('chalk');
 const fs = require	('fs');
 
@@ -9,7 +8,7 @@ function extraiLinks(texto) {
   while((temp = regex.exec(texto)) !== null) {
     arrayResultados.push({ [temp[1]]: temp[2] })
   }
-  return arrayResultados;
+  return arrayResultados.length === 0 ? 'Não há link' : arrayResultados;
 }
 	
 function trataErro(erro) {
@@ -20,7 +19,7 @@ async function pegaArquivo(caminhoDoArquivo){
   const encoding = 'utf-8';
   try {
     const texto = await fs.promises.readFile(caminhoDoArquivo, encoding)
-    console.log(extraiLinks(texto));
+    return extraiLinks(texto);
   } catch(erro) {
     trataErro(erro);
   }

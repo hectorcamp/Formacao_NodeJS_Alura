@@ -1,10 +1,10 @@
 const chalk = require('chalk');
-const pegarArquivo = require('./index');
+const pegaArquivo = require('./index');
 
 const caminho = process.argv;
 
-function processaTexto(caminhoDeArquivo) {
-    const resultado = pegarArquivo(caminhoDeArquivo[2]);
+async function processaTexto(caminhoDeArquivo) {
+    const resultado = await pegaArquivo(caminhoDeArquivo[2]);
     console.log(chalk.yellow('lista de links'), resultado);
 }
 
