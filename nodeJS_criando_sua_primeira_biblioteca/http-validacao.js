@@ -1,5 +1,5 @@
 function validaURLs(arrayLinks) {
-    console.log(arrayLinks);
+    return arrayLinks;
 }    
 
 module.exports = validaURLs
