@@ -14,3 +14,5 @@ async function processaTexto(caminhoDeArquivo) {
  }
 
 processaTexto(caminho);
+
+#!/usr/bin/env node
